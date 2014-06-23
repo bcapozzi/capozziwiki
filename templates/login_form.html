@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>User Login</title>
+    </head>
+
+    <body>
+
+        <style>
+
+        body {
+            position: relative;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+
+            width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            color: #333;
+        }
+        
+        label {
+              display: block;
+          font-size: 20px;
+        }
+
+        label + label {
+            margin-top: 20px;
+        }
+
+        input[type=text] {
+            width: 500px;
+            font-size: 20px;
+            padding: 2px;
+            font-family: monospace;
+        }
+
+        input[type=password] {
+            width: 500px;
+            font-size: 20px;
+            padding: 2px;
+            font-family: monospace;
+        }
+
+        input[type=submit] {
+            font-size: 24px;
+        }
+
+
+    </style>
+    <form method="post">
+        <h1>User Login</h1>
+        <br>
+        
+        <label>Username</label>
+            <input name="username" type="text"></input>
+        <br>
+
+        <label>Password</label>
+        <input name="password" type="password"></input>
+        <br>
+
+        <div style="color: red">{{login_error}}</div>
+
+        <br>
+        <input type="submit">
+    
+    </form>
+    </body>
+    
+</html>

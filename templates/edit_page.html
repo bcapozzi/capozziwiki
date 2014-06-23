@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CapozziWiki</title>
+    </head>
+
+    <header>
+        <p><a href="/logout">{{user}}(logout)</a> | <a href="/{{page_name}}">view</a></p>
+      </header>
+
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+        }
+
+        input[type=text] {
+            width: 400px;
+            font-size: 20px;
+            padding: 2px;
+        }
+
+        textarea {
+            width: 800px;
+            height: 600px;
+            font-size: 17px;
+        }
+
+        input[type=submit] {
+            font-size: 24px;
+        }
+
+        hr {
+            margin: 20px auto;
+        }
+
+        
+    </style>
+    
+    <body>
+        <form method="post">
+            <textarea name="content">{{content}}</textarea>
+        <br>
+        <input type="submit" value="Save">
+        </form>
+    </body>
+
+</html>

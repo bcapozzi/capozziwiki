@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>BasicBlog</title>
+    </head>
+
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+        }
+
+        input[type=text] {
+            width: 400px;
+            font-size: 20px;
+            padding: 2px;
+        }
+
+        textarea {
+            width: 400px;
+            height: 200px;
+            font-size: 17px;
+        }
+
+        input[type=submit] {
+            font-size: 24px;
+        }
+
+        hr {
+            margin: 20px auto;
+        }
+
+        .entry-subject {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .entry-content {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .error {
+            color: red
+        }
+
+        .entry + .entry {
+            margin-top: 20px;
+        }
+
+        .footer {
+         clear: both;
+         position: relative;
+         color: red;
+         //z-index: 10;
+         //height: 3em;
+         //margin-top: -3em;
+        }
+        
+    </style>
+    
+    <body>
+        <h1>Basic Blog</h1>
+        {% for entry in entries %}
+            <div class="entry">
+                <div class="entry-created">{{entry.created.strftime('Posted on %a %b %d %Y at %H:%M:%S')}}</div>
+                <div class="entry-subject"><a href="/blog/{{entry.uid}}" style="text-decoration: none">{{entry.subject}}</a></div>
+                <pre class="entry-content">{{entry.content}}</div>
+            </div>
+        {% endfor %}
+
+
+        <hr>
+        <div class="footer">{{lastQueried}}</div>
+    </body>
+
+</html>
